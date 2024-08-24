@@ -32,7 +32,7 @@ Web app Tour Od Heroes is running locally on localhost. In order to run it I use
 
 2. **Navigate to the Project Directory:**
     ```bash
-    cd E2E_Cypress_Option1
+    cd E2E_Cypress_Option1_Upload
     ```
 
 3. **Install Dependencies:**
