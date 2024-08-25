@@ -9,7 +9,7 @@ class Main {
   heroes = () => cy.xpath('//nav //a[2]');
   messageHeader = () => cy.xpath('//h2[text()="Messages"]');
   messageBlock = () => cy.xpath('//app-messages/div');
-  clearMessagesButton = '//button[@class="clear"]';
+  clearMessagesButton = '//button[text()="Clear messages"]';
 
   clearAllMessages() {
     cy.xpath(this.clearMessagesButton)

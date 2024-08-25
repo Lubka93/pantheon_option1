@@ -4,7 +4,7 @@ import { Heroes } from "../components/heroes";
 import { DetailPage } from "../components/detailPage";
 import 'cypress-xpath';
 
-describe('Home page is correctly diplayed', ()=>{
+describe('Home page is correctly displayed', ()=>{
     before(()=>{
         Base.clearAllStorageData(); 
         cy.title('Tour of Heroes');
@@ -24,9 +24,13 @@ describe('Home page is correctly diplayed', ()=>{
     Base.heroes().should.exist;
     Base.heroes().invoke('text').should('eql', 'Heroes');
     })
+
     })
 
-describe('Main navigation has correct navigation functionality and subpages are displayed correctly', ()=>{
+
+
+
+describe('Main navigation has correct functionality and subpages are displayed correctly', ()=>{
     before(()=>{
         cy.title('Tour of Heroes');
         Base.clearAllStorageData();
@@ -36,6 +40,21 @@ describe('Main navigation has correct navigation functionality and subpages are 
             cy.visit(Cypress.env('baseURL')); 
         })
     
+
+        it('Dashboard/Heroes navigation button has a valid functionality through all subpages', ()=>{
+            cy.url().should('contain', '/dashboard');
+            Base.clickOnHeroes();
+            cy.url().should('contain', '/heroes');
+            Base.clickOnDashBoard();
+            cy.url().should('contain', '/dashboard');
+            Dashboard.clickOnFirstTopHero();
+            cy.url().should('contain', '/detail');
+            Base.clickOnDashBoard();
+            cy.url().should('contain', '/dashboard');
+            Dashboard.clickOnFirstTopHero();
+            Base.clickOnHeroes();
+            cy.url().should('contain', '/heroes');
+        })
 
     it('Heroes subpage is opened and correctly displayed after clicking on heroes navigation button', ()=>{
            Base.clickOnHeroes();
@@ -197,7 +216,7 @@ describe('Verify functionality for dashboard subpage', ()=>{
     })
 
 
-describe('Verify search functionality for dashboard page', ()=>{
+describe('Verify search functionality for dashboard subpage', ()=>{
         before(()=>{
             cy.title('Tour of Heroes');
             Base.clearAllStorageData(); 
@@ -234,7 +253,7 @@ describe('Verify search functionality for dashboard page', ()=>{
 
         for (let i= 0; i < nameArray.length; i++) { 
         Dashboard.searchInput().should('be.visible').type(nameArray[i]);
-        cy.wait(500);
+        cy.wait(1000);
 
         //Verify that no reasults were found
         cy.xpath('//app-hero-search//ul').children().should('have.length', 0);
@@ -306,9 +325,11 @@ describe('Verify functionality for heroes subpage', ()=>{
     
         Base.clearAllMessages();
       
+        Base.clearAllMessages();
+      
         // Assert that the messages have been deleted
         cy.contains('div', 'HeroService: fetched heroes').should('not.exist');
-          cy.wait(500)
+        cy.wait(1000);
         cy.reload();
       
 

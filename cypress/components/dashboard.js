@@ -10,6 +10,9 @@ inputName = () => cy.xpath('//div //label');
 searchInput = () => cy.get('#search-box');
 topDashboardHeros = () => cy.xpath('//div[@class="heroes-menu"]//a');
 
+clickOnFirstTopHero() {
+    this.topHeroes().should('be.visible').first().click();
+}
 }
 
 export const Dashboard = new Dash(); 

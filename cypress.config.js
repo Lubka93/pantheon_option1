@@ -1,6 +1,5 @@
 const { defineConfig } = require('cypress');
 
-// Define the Cypress configuration
 module.exports = defineConfig({
   retries: {            
     runMode: 1,
@@ -19,7 +18,8 @@ module.exports = defineConfig({
   },
   pageLoadTimeout: 7000,    
   viewportHeight: 1080,    
-  viewportWidth: 1920,   
+  viewportWidth: 1920,
+  defaultCommandTimeout: 10000,
   reporter: 'cypress-mochawesome-reporter', 
   reporterOptions: { 
     charts: true,
@@ -29,6 +29,6 @@ module.exports = defineConfig({
     saveAllAttempts: false,
   },
   video: false, 
-  screenshotOnRunFailure: false, 
+  screenshotOnRunFailure: true, 
 });
 
