@@ -2,7 +2,7 @@
 
 #### Tests are written for webapp Tour Of Heroes
 
-I prepared simple e2e tests which should cover all branches of webapp. I focused on main navigation paths based on documentaion on Angular webpage and my actual interaction with app. I also focused also on testing main functionality, where I covered positive and also negative test cases.
+I prepared simple e2e tests which should all basic parts  of the web app. I focused on main navigation paths based on documentaion at Angular webpage and my actual interaction with app. I also focused on testing main functionalities, where I covered positive and also negative test cases.
 
 #### Demo presentation is avalaible on google drive: [Tour of Heroes Demo presentation](https://docs.google.com/presentation/d/1fJtld8q8LFKTQj16byG_YtMymk_CxKSI/edit?usp=sharing&ouid=112772196783359617351&rtpof=true&sd=true)
 
@@ -21,7 +21,7 @@ I prepared simple e2e tests which should cover all branches of webapp. I focused
 - OS - windows home 10
 
 #### Tour of Heroes
-Web app Tour Od Heroes is running locally on localhost. In order to run it I used command **npm run start**
+Web app Tour Od Heroes is running locally at localhost. In order to run Tour of Heroes, I used command **npm run start**
 - it uses port 4200.
 
 
@@ -34,7 +34,7 @@ Web app Tour Od Heroes is running locally on localhost. In order to run it I use
 
 2. **Navigate to the Project Directory:**
     ```bash
-    cd E2E_Cypress_Option1_Upload
+    cd pantheon_option1
     ```
 
 3. **Install Dependencies:**
